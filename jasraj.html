@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasraj Choudhary - Cybersecurity Professional Portfolio</title>
+    <meta name="description" content="Jasraj Choudhary - Expert Cybersecurity Professional specializing in network security, digital forensics, and vulnerability assessment. Proven track record in threat analysis and incident response.">
+    <meta name="keywords" content="Cybersecurity, Network Security, Digital Forensics, Vulnerability Assessment, Penetration Testing, SIEM, AWS Security">
+    <meta name="author" content="Jasraj Choudhary">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Jasraj Choudhary - Cybersecurity Professional">
+    <meta property="og:description" content="Expert Cybersecurity Professional specializing in network security, digital forensics, and vulnerability assessment.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jasrajchoudhary.com">
+    
+    <!-- CSS -->
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --background: hsl(240, 10%, 3.9%);
+            --foreground: hsl(0, 0%, 98%);
+            --muted: hsl(240, 3.7%, 15.9%);
+            --muted-foreground: hsl(240, 5%, 64.9%);
+            --card: hsl(240, 3.7%, 15.9%);
+            --border: hsl(240, 3.7%, 15.9%);
+            --primary: hsl(26, 9.8%, 10%);
+            --secondary: hsl(240, 3.7%, 17.9%);
+            --accent: hsl(193, 100%, 50%);
+            --accent-foreground: hsl(26, 9.8%, 10%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: hsla(240, 10%, 3.9%, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--foreground);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--foreground);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--background) 0%, var(--secondary) 50%, var(--background) 100%);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--muted-foreground);
+            margin-bottom: 2rem;
+        }
+
+        .portfolio-badge {
+            background: hsla(193, 100%, 50%, 0.2);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--accent-foreground);
+        }
+
+        .btn-primary:hover {
+            background: hsla(193, 100%, 50%, 0.9);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: hsla(193, 100%, 50%, 0.1);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-alt {
+            background: var(--secondary);
+        }
+
+        .section-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: hsla(193, 100%, 50%, 0.3);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .accent-text {
+            color: var(--accent);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: var(--muted-foreground);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-tag {
+            background: hsla(193, 100%, 50%, 0.2);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-accent {
+            border-left: 4px solid var(--accent);
+        }
+
+        /* Experience Section */
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-company {
+            font-size: 1.1rem;
+            color: var(--muted-foreground);
+            margin-bottom: 1rem;
+        }
+
+        .experience-period {
+            color: var(--muted-foreground);
+            font-size: 0.9rem;
+        }
+
+        .achievement-list {
+            list-style: none;
+        }
+
+        .achievement-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+            color: var(--muted-foreground);
+        }
+
+        .achievement-icon {
+            color: var(--accent);
+            margin-right: 0.5rem;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-icon {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .skill-category {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: var(--muted-foreground);
+        }
+
+        .skill-bullet {
+            color: var(--accent);
+            margin-right: 0.5rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .project-link {
+            color: var(--foreground);
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            transition: background 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: var(--muted);
+        }
+
+        .project-description {
+            color: var(--muted-foreground);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: hsla(193, 100%, 50%, 0.2);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.8rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-card {
+            background: var(--card);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .contact-icon {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 3rem;
+        }
+
+        .contact-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            color: var(--muted-foreground);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            background: var(--accent);
+            color: var(--accent-foreground);
+            padding: 1rem;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+        }
+
+        .social-link:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .footer-content {
+            color: var(--muted-foreground);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .footer-link {
+            color: var(--muted-foreground);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--background);
+                flex-direction: column;
+                padding: 1rem;
+                border-top: 1px solid var(--border);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-number {
+                font-size: 3rem;
+            }
+            
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#home" class="logo">Jasraj Choudhary</a>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="/home/jasraj/Desktop/Portfolio/WhatsApp Image 2025-07-15 at 4.01.00 PM (2).jpeg" alt="Jasraj Choudhary" class="profile-image">
+                <h1 class="hero-title">Jasraj <span class="accent-text">Choudhary</span></h1>
+                <p class="hero-subtitle">Cybersecurity Professional & Network Security Expert</p>
+                <div class="portfolio-badge">PORTFOLIO</div>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-outline">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section section-alt">
+        <div class="container">
+            <div class="section-number">02</div>
+            <div class="about-grid">
+                <div>
+                    <h2 class="section-title">A Little <span class="accent-text">About Me</span></h2>
+                    <h3 class="section-subtitle">Hello! I'm Jasraj Choudhary</h3>
+                    <p class="about-text">
+                        Hello digital security enthusiasts! I'm Jasraj Choudhary, your cybersecurity 
+                        specialist navigating the complex world of network security, threat analysis, 
+                        and digital forensics. Join me on a journey where advanced security protocols, 
+                        incident response expertise, and vulnerability assessment converge.
+                    </p>
+                    <p class="about-text">
+                        Cybersecurity professional with expertise in network security, vulnerability 
+                        assessment, incident response, and digital forensics. Proven experience in 
+                        threat analysis, penetration testing, and security policy implementation. 
+                        Reduced security risks by 30% through proactive threat analysis and policy enforcement.
+                    </p>
+                    <div class="skill-tags">
+                        <div class="skill-tag">🛡️ Cybersecurity Expert</div>
+                        <div class="skill-tag">🌐 Network Security</div>
+                        <div class="skill-tag">🔍 Digital Forensics</div>
+                    </div>
+                </div>
+                <div>
+                    <img src="/home/jasraj/Desktop/Portfolio/WhatsApp Image 2025-07-15 at 4.00.55 PM.jpeg" alt="Cybersecurity workspace" class="about-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Work <span class="accent-text">Experience</span></h2>
+            <div class="section-number">03</div>
+            
+            <div class="card card-accent">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Security Analyst Intern</h3>
+                        <p class="experience-company">HPH Technology LLP, Bengaluru, Karnataka</p>
+                    </div>
+                    <span class="experience-period">December 2023 - May 2025</span>
+                </div>
+                <ul class="achievement-list">
+                    <li class="achievement-item">
+                        <span class="achievement-icon">✓</span>
+                        <span>Conducted vulnerability assessments and penetration tests on 50+ systems, identifying critical vulnerabilities</span>
+                    </li>
+                    <li class="achievement-item">
+                        <span class="achievement-icon">✓</span>
+                        <span>Monitored and analyzed security alerts using SIEM tools, reducing incident response time by 25%</span>
+                    </li>
+                    <li class="achievement-item">
+                        <span class="achievement-icon">✓</span>
+                        <span>Developed and enforced security policies aligned with NIST and ISO 27001 standards</span>
+                    </li>
+                    <li class="achievement-item">
+                        <span class="achievement-icon">✓</span>
+                        <span>Collaborated with cross-functional teams to implement endpoint security solutions</span>
+                    </li>
+                    <li class="achievement-item">
+                        <span class="achievement-icon">✓</span>
+                        <span>Performed threat analysis and risk assessment for enterprise network infrastructure</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card card-accent">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Cybersecurity Intern</h3>
+                        <p class="experience-company">Amroha Police Department, Uttar Pradesh</p>
+                    </div>
+                    <span class="experience-period">June 2025 - July 2025</span>
+                </div>
+                <ul class="achievement-list">
+                    <li class="achievement-item">
+                        <span class="achievement-icon">✓</span>
+                        <span>Learned advanced Linux security tools and command-line operations for cybersecurity investigations</span>
+                    </li>
+                    <li class="achievement-item">
+                        <span class="achievement-icon">✓</span>
+                        <span>Gained hands-on experience in digital forensics techniques and evidence preservation methods</span>
+                    </li>
+                    <li class="achievement-item">
+                        <span class="achievement-icon">✓</span>
+                        <span>Applied security frameworks and cybercrime investigation procedures in law enforcement context</span>
+                    </li>
+                    <li class="achievement-item">
+                        <span class="achievement-icon">✓</span>
+                        <span>Developed expertise in incident response protocols and threat analysis</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card card-accent">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">IT Specialist</h3>
+                        <p class="experience-company">Parul University, Vadodara, Gujarat</p>
+                    </div>
+                    <span class="experience-period">June 2023 - September 2023</span>
+                </div>
+                <ul class="achievement-list">
+                    <li class="achievement-item">
+                        <span class="achievement-icon">✓</span>
+                        <span>Resolved 100+ system and network issues, improving IT infrastructure efficiency by 20%</span>
+                    </li>
+                    <li class="achievement-item">
+                        <span class="achievement-icon">✓</span>
+                        <span>Implemented network security measures using Red Hat Linux, reducing unauthorized access incidents by 30%</span>
+                    </li>
+                    <li class="achievement-item">
+                        <span class="achievement-icon">✓</span>
+                        <span>Configured and maintained AWS services including EC2 and S3 to ensure secure cloud operations</span>
+                    </li>
+                    <li class="achievement-item">
+                        <span class="achievement-icon">✓</span>
+                        <span>Managed user authentication and access control systems for university infrastructure</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card card-accent">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Campus Ambassador</h3>
+                        <p class="experience-company">Swiggy, Bangalore (Remote)</p>
+                    </div>
+                    <span class="experience-period">July 2024 - September 2024</span>
+                </div>
+                <ul class="achievement-list">
+                    <li class="achievement-item">
+                        <span class="achievement-icon">✓</span>
+                        <span>Promoted brand awareness and engagement among university students through strategic marketing campaigns</span>
+                    </li>
+                    <li class="achievement-item">
+                        <span class="achievement-icon">✓</span>
+                        <span>Coordinated campus events and initiatives to increase brand visibility and customer acquisition</span>
+                    </li>
+                    <li class="achievement-item">
+                        <span class="achievement-icon">✓</span>
+                        <span>Collaborated with marketing teams to develop targeted promotional strategies for student demographics</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Skills & <span class="accent-text">Expertise</span></h2>
+            <div class="section-number">04</div>
+            
+            <div class="skills-grid">
+                <div class="card">
+                    <div class="skill-icon">⚙️</div>
+                    <h3 class="skill-category">Cybersecurity Tools</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-bullet">•</span> SIEM, Splunk, QRadar</li>
+                        <li class="skill-item"><span class="skill-bullet">•</span> Nessus, Wireshark, Metasploit</li>
+                        <li class="skill-item"><span class="skill-bullet">•</span> Vulnerability Assessment Tools</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="skill-icon">🌐</div>
+                    <h3 class="skill-category">Network Security</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-bullet">•</span> Firewall Configuration</li>
+                        <li class="skill-item"><span class="skill-bullet">•</span> IDS/IPS Systems</li>
+                        <li class="skill-item"><span class="skill-bullet">•</span> VPN & Network Segmentation</li>
+                        <li class="skill-item"><span class="skill-bullet">•</span> Vulnerability Scanning</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="skill-icon">💻</div>
+                    <h3 class="skill-category">Operating Systems</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-bullet">•</span> Red Hat Linux, Ubuntu</li>
+                        <li class="skill-item"><span class="skill-bullet">•</span> Windows Server, Kali Linux</li>
+                        <li class="skill-item"><span class="skill-bullet">•</span> Linux Command Line</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="skill-icon">👨‍💻</div>
+                    <h3 class="skill-category">Programming</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-bullet">•</span> Python, Bash Scripting</li>
+                        <li class="skill-item"><span class="skill-bullet">•</span> PowerShell Scripting</li>
+                        <li class="skill-item"><span class="skill-bullet">•</span> Automation Tools</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="skill-icon">☁️</div>
+                    <h3 class="skill-category">Cloud Security</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-bullet">•</span> AWS IAM, S3, EC2</li>
+                        <li class="skill-item"><span class="skill-bullet">•</span> Cloud Security Configuration</li>
+                        <li class="skill-item"><span class="skill-bullet">•</span> Risk Management</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="skill-icon">🔍</div>
+                    <h3 class="skill-category">Digital Forensics</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-bullet">•</span> Evidence Collection</li>
+                        <li class="skill-item"><span class="skill-bullet">•</span> Incident Analysis</li>
+                        <li class="skill-item"><span class="skill-bullet">•</span> Cybercrime Investigation</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="skill-icon">🛡️</div>
+                    <h3 class="skill-category">Security Frameworks</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-bullet">•</span> NIST Framework</li>
+                        <li class="skill-item"><span class="skill-bullet">•</span> ISO 27001</li>
+                        <li class="skill-item"><span class="skill-bullet">•</span> MITRE ATT&CK Framework</li>
+                        <li class="skill-item"><span class="skill-bullet">•</span> OWASP</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="skill-icon">🔒</div>
+                    <h3 class="skill-category">Risk Management</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-bullet">•</span> Threat Intelligence</li>
+                        <li class="skill-item"><span class="skill-bullet">•</span> Security Assessment</li>
+                        <li class="skill-item"><span class="skill-bullet">•</span> Compliance</li>
+                        <li class="skill-item"><span class="skill-bullet">•</span> Authentication & Access Control</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured <span class="accent-text">Projects</span></h2>
+            <div class="section-number">05</div>
+            
+            <div class="projects-grid">
+                <div class="card">
+                    <div class="project-header">
+                        <h3 class="project-title">MyLearnings</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/jasraj100" class="project-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Developed Python-based network vulnerability scanner to detect open ports, misconfigurations, and security exploits. 
+                        Automated vulnerability scanning process, reducing manual effort by 40%. Implemented threat detection algorithms and 
+                        security assessment protocols.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Nmap</span>
+                        <span class="tech-tag">Wireshark</span>
+                        <span class="tech-tag">Vulnerability Assessment</span>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="project-header">
+                        <h3 class="project-title">Holly</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/jasraj100" class="project-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Built cybersecurity incident response simulation platform for training teams on real-world breach scenarios. 
+                        Simulated 10+ attack scenarios using MITRE ATT&CK framework, improving team preparedness by 35%. Integrated 
+                        security information and event management for comprehensive threat modeling.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">MITRE ATT&CK</span>
+                        <span class="tech-tag">SIEM</span>
+                        <span class="tech-tag">Incident Response</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Work <span class="accent-text">with Me</span></h2>
+            <div class="section-number">06</div>
+            
+            <p style="text-align: center; font-size: 1.2rem; color: var(--muted-foreground); margin-bottom: 3rem;">
+                Ready to secure your digital infrastructure? Let's connect and discuss how I can help strengthen your cybersecurity posture.
+            </p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <h3 class="contact-title">Phone</h3>
+                    <p class="contact-info">+91 9981323225</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3 class="contact-title">Email</h3>
+                    <p class="contact-info">jasrajchoudhary314@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://linkedin.com/in/jasrajchoudhary" class="social-link" target="_blank">🔗</a>
+                <a href="https://github.com/jasraj100" class="social-link" target="_blank">🐙</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-content">© 2025 Jasraj Choudhary. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Terms & Support</a>
+                <a href="#" class="footer-link">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'hsla(240, 10%, 3.9%, 0.98)';
+            } else {
+                navbar.style.background = 'hsla(240, 10%, 3.9%, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
